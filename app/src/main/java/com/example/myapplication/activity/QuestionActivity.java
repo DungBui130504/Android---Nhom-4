@@ -176,7 +176,7 @@ public class QuestionActivity extends AppCompatActivity {
                 String answerDate = sdf.format(calendar.getTime());
 
                 boolean isAnswer = true;
-                if (answserTxt.isEmpty()) {
+                if (answserTxt.trim().isEmpty()) {
                     isAnswer = false;
                 }
 
@@ -198,6 +198,4 @@ public class QuestionActivity extends AppCompatActivity {
             }
         }
     }
-
-
 }
