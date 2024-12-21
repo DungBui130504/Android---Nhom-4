@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SubjectActivity"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_green"
+    android:fitsSystemWindows="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="163dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/subject_back_btn"
+                android:gravity="center"
+                android:id="@+id/backBtn"
+                android:src="@drawable/arrow_back_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:elevation="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@android:color/transparent"
+                android:text="Quản lý công thức"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddFormula"
+                android:layout_width="139dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/subject_add_btn"
+                android:elevation="6dp"
+                android:text="Thêm công thức"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:translationZ="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="762dp"
+        android:background="@drawable/subject_layout"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/lstFormula"
+            android:layout_width="380dp"
+            android:layout_height="700dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp" />
+    </LinearLayout>
+
+</LinearLayout>

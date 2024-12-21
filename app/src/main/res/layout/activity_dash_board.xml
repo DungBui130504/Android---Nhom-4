@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        android:background="@drawable/dashboard_header"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/subject_back_btn"
+            android:gravity="center"
+            android:src="@drawable/arrow_back_icon"
+            android:id="@+id/loginBackBtn"/>
+
+        <TextView
+            android:layout_width="462dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="DASHBOARD"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="279dp"
+        android:layout_height="81dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/dashboard_item"
+        android:id="@+id/subjectBtn"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem danh sách môn học"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:textSize="17dp"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/subject_back_btn"
+            android:gravity="center"
+            android:src="@drawable/arrow_back_icon"
+            android:layout_marginLeft="20dp"
+            android:rotation="180"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="279dp"
+        android:layout_height="81dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/dashboard_item"
+        android:id="@+id/notificationBtn"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt thông báo"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:textSize="17dp"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/subject_back_btn"
+            android:gravity="center"
+            android:src="@drawable/arrow_back_icon"
+            android:layout_marginLeft="100dp"
+            android:rotation="180"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="false"
+    tools:context=".activity.QuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:focusable="false"
+        android:layout_height="200dp"
+        android:background="@drawable/subject_header"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/questionBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/subject_back_btn"
+                android:gravity="center"
+                android:src="@drawable/arrow_back_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Tên môn học"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"/>
+
+            <ImageButton
+                android:id="@+id/trashBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/trash"
+                android:clickable="true"
+                android:background="@drawable/subject_back_btn"
+                android:layout_marginTop="14dp"
+                android:contentDescription="Delete question"
+                android:layout_marginLeft="85dp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/addBtn"
+                android:background="@drawable/subject_back_btn"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="100dp"
+        android:background="@drawable/question_layout_1"
+        android:layout_gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:orientation="horizontal"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_marginTop="-70dp">
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/numOfQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Câu hỏi"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:background="#838383">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Câu trả lời"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_width="match_parent"
+        android:id="@+id/questionList"
+        android:divider="#00BCD4"
+        android:layout_height="500dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient_green">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mess"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/subject_back_btn"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/email"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/subject_back_btn"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_green"
+    android:gravity="left"
+    android:orientation="vertical"
+    tools:context=".activity.SignInActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="866dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/sign_in_workplace"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Đăng Ký"
+            android:textSize="40dp" />
+
+        <EditText
+            android:id="@+id/regTxtUserName"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint="Tài khoản"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtRegPassWord"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint="Mật khẩu"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtFullName"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint="Nhập họ tên"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtRegEmail"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint="Nhập email"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtRegPhone"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint="Nhập số điện thoại"
+            android:textSize="15dp" />
+
+
+        <CheckBox
+            android:id="@+id/saveReg"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Lưu tài khoản?" />
+
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_button"
+            android:text="Đăng ký"
+            android:textColor="@color/white" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Đã có tài khoản?" />
+
+            <TextView
+                android:id="@+id/loginIntent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:text="Đăng nhập"
+                android:textColor="@drawable/txt_sign_in" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

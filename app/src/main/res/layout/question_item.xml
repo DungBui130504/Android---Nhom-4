@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:elevation="10dp"
+        android:translationZ="5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="horizontal"
+        android:background="@drawable/question_item_background"
+        android:layout_marginTop="20dp">
+
+        <!-- Decoration Line -->
+        <LinearLayout
+            android:id="@+id/decor"
+            android:layout_width="10dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_height="match_parent"
+            android:background="#FF5722"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:focusable="false"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:focusableInTouchMode="false"
+            android:padding="7dp"
+            android:orientation="vertical">
+
+            <!-- Question Title -->
+            <TextView
+                android:id="@+id/questionItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên câu hỏi"
+                android:textSize="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Status Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="horizontal"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/circle" />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Trạng thái: " />
+                <TextView
+                    android:id="@+id/isAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#F44336"
+                    android:text="Chưa trả lời"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/questionChk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+</LinearLayout>

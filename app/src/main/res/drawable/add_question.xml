@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Nền của View -->
+    <solid android:color="#E5EB5346"/> <!-- Màu nền trắng, bạn có thể thay đổi -->
+
+    <!-- Bo tròn góc 10dp -->
+    <corners
+        android:topLeftRadius="0dp"
+        android:topRightRadius="30dp"
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="30dp"
+        />
+</shape>

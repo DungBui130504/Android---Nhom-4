@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/subject_item"
+    android:elevation="10dp"
+    android:layout_marginTop="30dp"
+    >
+
+    <TextView
+        android:layout_width="192dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:text="Các hàng đẳng thức đáng quên"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:background="@null"
+        android:src="@drawable/edit" />
+    
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/trash"
+        android:background="@null"/>
+
+</LinearLayout>

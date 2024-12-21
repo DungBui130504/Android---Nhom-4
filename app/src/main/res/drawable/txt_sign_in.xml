@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Màu chữ khi TextView bị nhấn -->
+    <item android:state_pressed="true" android:textColor="#FF5722" />
+    <!-- Màu chữ khi TextView ở trạng thái bình thường -->
+    <item android:textColor="@color/black" />
+</selector>

@@ -1,0 +1,15 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Trạng thái nhấn (pressed) -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#67BFBFBF" /> <!-- Màu nền xanh nhạt khi nhấn -->
+            <corners android:radius="8dp" /> <!-- Bo góc -->
+        </shape>
+    </item>
+    <!-- Trạng thái mặc định -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" /> <!-- Không có nền -->
+        </shape>
+    </item>
+</selector>

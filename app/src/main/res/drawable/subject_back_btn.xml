@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Trạng thái nhấn -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#0BD0F2" /> <!-- Màu khi nhấn -->
+            <corners android:radius="20dp" /> <!-- Bo góc nếu cần -->
+        </shape>
+    </item>
+
+    <!-- Trạng thái mặc định -->
+    <item tools:ignore="StateListReachable">
+        <shape>
+            <solid android:color="@android:color/transparent" /> <!-- Không màu -->
+            <corners android:radius="20dp" /> <!-- Bo góc nếu cần -->
+        </shape>
+    </item>
+    <ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="#0BD0F2"> <!-- Hiệu ứng ripple khi nhấn -->
+
+        <item>
+            <shape>
+                <solid android:color="@android:color/transparent" /> <!-- Mặc định không màu -->
+                <corners android:radius="20dp" /> <!-- Bo góc -->
+            </shape>
+        </item>
+    </ripple>
+</selector>

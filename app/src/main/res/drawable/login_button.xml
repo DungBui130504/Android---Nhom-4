@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Tạo nền gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#ff6581"
+                android:endColor="#ff9f8e"
+                android:type="linear" />
+            <!-- Chỉ sử dụng một thẻ <corners> -->
+            <corners android:radius="40dp"/>
+        </shape>
+    </item>
+</layer-list>
