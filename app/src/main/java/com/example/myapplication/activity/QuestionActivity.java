@@ -40,7 +40,6 @@ public class QuestionActivity extends AppCompatActivity {
 
     int userId;
     int subjectId;
-//    int numOfAns;
 
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
@@ -54,7 +53,6 @@ public class QuestionActivity extends AppCompatActivity {
             return insets;
         });
 
-//        numOfAns = 0;
 
         Intent intent2 = getIntent();
 
@@ -78,12 +76,6 @@ public class QuestionActivity extends AppCompatActivity {
         questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(subjectId, userId));
 
         Log.d("questions:", questions.toString());
-
-//        for (int i = 0; i < questions.size(); i++ ) {
-//            if (!questions.get(i).getAnswerContent().trim().isEmpty()) {
-//                numOfAns++;
-//            }
-//        }
 
         questionAdapter = new QuestionAdapter(QuestionActivity.this, questions, R.layout.question_item);
 
@@ -159,6 +151,11 @@ public class QuestionActivity extends AppCompatActivity {
                 // Cập nhật danh sách câu hỏi
                 questions.clear();
                 questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(subjectId, userId));
+
+                numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
+
+                numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
+
                 questionAdapter.notifyDataSetChanged();
 
                 Toast.makeText(QuestionActivity.this, "Thêm thành công!", Toast.LENGTH_SHORT).show();
@@ -187,6 +184,11 @@ public class QuestionActivity extends AppCompatActivity {
 
                 questions.clear();
                 questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(subjectId, userId));
+
+                numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
+
+                numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
+
                 questionAdapter.notifyDataSetChanged();
 
                 Toast.makeText(QuestionActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
