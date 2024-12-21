@@ -29,7 +29,7 @@ import java.util.Calendar;
 public class QuestionActivity extends AppCompatActivity {
     ImageButton questionBack, addBtn;
     ListView questionList;
-    TextView numOfQuestion, isAnswer;
+    TextView numOfQuestion, numOfAnswer, isAnswer;
     ArrayList<QuestionAnswerObject> questions;
     QuestionAdapter questionAdapter;
     QuestionAnswerTable questionAnswerTable;
@@ -40,8 +40,9 @@ public class QuestionActivity extends AppCompatActivity {
 
     int userId;
     int subjectId;
+//    int numOfAns;
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,8 @@ public class QuestionActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+//        numOfAns = 0;
 
         Intent intent2 = getIntent();
 
@@ -65,13 +68,22 @@ public class QuestionActivity extends AppCompatActivity {
         addBtn = findViewById(R.id.addBtn);
         questionList = findViewById(R.id.questionList);
         numOfQuestion = findViewById(R.id.numOfQuestion);
+        numOfAnswer = findViewById(R.id.numOfAnswer);
         isAnswer = findViewById(R.id.isAnswer);
 
         questions = new ArrayList<>();
 
         questionAnswerTable = new QuestionAnswerTable(this);
 
-        questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(1, 1));
+        questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(subjectId, userId));
+
+        Log.d("questions:", questions.toString());
+
+//        for (int i = 0; i < questions.size(); i++ ) {
+//            if (!questions.get(i).getAnswerContent().trim().isEmpty()) {
+//                numOfAns++;
+//            }
+//        }
 
         questionAdapter = new QuestionAdapter(QuestionActivity.this, questions, R.layout.question_item);
 
@@ -80,6 +92,8 @@ public class QuestionActivity extends AppCompatActivity {
         questionAdapter.notifyDataSetChanged();
 
         numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
+
+        numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
 
         questionBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,12 +153,12 @@ public class QuestionActivity extends AppCompatActivity {
 
                 // Thêm câu hỏi mới vào database
                 questionAnswerTable.addNewQuestionAnswer(
-                        questionTxt, answserTxt, answerDate, questionDate, userId, subjectId
+                        questionTxt, answserTxt, answerDate, questionDate, subjectId, userId
                 );
 
                 // Cập nhật danh sách câu hỏi
                 questions.clear();
-                questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(userId, subjectId));
+                questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(subjectId, userId));
                 questionAdapter.notifyDataSetChanged();
 
                 Toast.makeText(QuestionActivity.this, "Thêm thành công!", Toast.LENGTH_SHORT).show();
@@ -172,7 +186,7 @@ public class QuestionActivity extends AppCompatActivity {
                 questionAnswerTable.updateAnswer(questions.get(save).getQuestionAnswerID(), answserTxt, answerDate, isAnswer);
 
                 questions.clear();
-                questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(userId, subjectId));
+                questions.addAll(questionAnswerTable.getQuestionAnswersOfUserID(subjectId, userId));
                 questionAdapter.notifyDataSetChanged();
 
                 Toast.makeText(QuestionActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();

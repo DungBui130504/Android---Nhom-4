@@ -31,6 +31,9 @@ public class AddQuestionActivity extends AppCompatActivity {
     String questionText;
     String answerText;
 
+    int userId;
+    int subjectId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +47,9 @@ public class AddQuestionActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Intent resultIntent = new Intent();
-        //        int userId = intent.getIntExtra("userId", -2);
-//        int subjectId = intent.getIntExtra("subjectId", -1);
-        int userId = 1;
-        int subjectId = 1;
+        userId = intent.getIntExtra("userId", -2);
+        subjectId = intent.getIntExtra("subjectId", -1);
+
 
             backBtn = findViewById(R.id.backBtn);
             questionTxt = findViewById(R.id.questionTxt);

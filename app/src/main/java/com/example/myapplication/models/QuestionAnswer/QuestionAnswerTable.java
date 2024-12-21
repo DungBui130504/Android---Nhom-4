@@ -188,4 +188,30 @@ public class QuestionAnswerTable {
         return countStr;
     }
 
+    // Lấy số lượng câu hỏi của một subjectID và userID với isAnswer = 1
+    public String getCountOfQuestionsIsAnswer(int subjectID, int userID) {
+        String countStr = "0";  // Mặc định là "0" nếu không có câu hỏi
+        String query = "SELECT COUNT(*) FROM QuestionAnswer WHERE subjectID = ? AND userID = ? AND isAnswer = 1"; // Thêm điều kiện isAnswer = 1
+        Cursor cursor = null;
+
+        try {
+            // Thực thi truy vấn để đếm số lượng câu hỏi với isAnswer = 1
+            cursor = this.db.rawQuery(query, new String[]{String.valueOf(subjectID), String.valueOf(userID)});
+            if (cursor != null && cursor.moveToFirst()) {
+                // Lấy kết quả đếm và chuyển thành chuỗi
+                countStr = String.valueOf(cursor.getInt(0)); // Cột đầu tiên chứa giá trị đếm
+            }
+        } catch (Exception e) {
+            Toast.makeText(this.context, "Có lỗi khi lấy số lượng câu hỏi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        } finally {
+            // Đóng con trỏ nếu không null
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+
+        return countStr;
+    }
+
+
 }
