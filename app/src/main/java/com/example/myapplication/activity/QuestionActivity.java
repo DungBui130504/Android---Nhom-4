@@ -37,10 +37,9 @@ public class QuestionActivity extends AppCompatActivity {
     int save, check;
 
     Intent intent = getIntent();
-    //        int userId = intent.getIntExtra("userId", -2);
-//        int subjectId = intent.getIntExtra("subjectId", -2);
-    int userId = 1;
-    int subjectId = 1;
+
+    int userId;
+    int subjectId;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -54,7 +53,13 @@ public class QuestionActivity extends AppCompatActivity {
             return insets;
         });
 
+        Intent intent2 = getIntent();
 
+        userId = intent2.getIntExtra("userId", -2);
+        subjectId = intent2.getIntExtra("subjectId", -2);
+
+        Log.d("myUserId:", userId + "");
+        Log.d("mySubjectId:", subjectId + "");
 
         questionBack = findViewById(R.id.questionBack);
         addBtn = findViewById(R.id.addBtn);

@@ -154,5 +154,33 @@ public class UserTable {
         return user;
     }
 
+    public int getUserIdByUserName(String userName) {
+        int userID = -1; // Nếu không tìm thấy sẽ trả về -1
+        Cursor cur = null;
+        try {
+            String queryUser = "SELECT userID FROM User WHERE userName = ?";
+            cur = this.db.rawQuery(queryUser, new String[]{userName.trim()});
+
+            if (cur != null && cur.moveToFirst()) {
+                int userIDIndex = cur.getColumnIndex("userID");
+
+                // Kiểm tra nếu chỉ số cột hợp lệ (>= 0)
+                if (userIDIndex >= 0) {
+                    userID = cur.getInt(userIDIndex);
+                } else {
+                    Toast.makeText(this.context, "Cột không tồn tại trong cơ sở dữ liệu", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(this.context, "Có lỗi khi lấy userID: " + e, Toast.LENGTH_SHORT).show();
+        } finally {
+            if (cur != null) {
+                cur.close();
+            }
+        }
+        return userID;
+    }
+
 
 }

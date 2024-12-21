@@ -3,6 +3,7 @@ package com.example.myapplication.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -76,8 +77,9 @@ public class LoginActivity extends AppCompatActivity {
                     editor.apply();
                 }
                 Intent loginIntent = new Intent(LoginActivity.this, DashBoardActivity.class);
+                loginIntent.putExtra("userId", userTable.getUserIdByUserName(userName));
+                Log.d("User:", userTable.getUserIdByUserName(userName) + "");
                 startActivity(loginIntent);
-
             }
         });
 

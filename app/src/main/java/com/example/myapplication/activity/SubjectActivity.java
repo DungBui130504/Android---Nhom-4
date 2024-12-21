@@ -62,9 +62,9 @@ public class SubjectActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-//        int userId = intent.getIntExtra("userId", -2);
-//        Log.d("Id of me:", userId + "");
-        int userId = 1;
+        int userId = intent.getIntExtra("userId", -2);
+        Log.d("Id of me:", userId + "");
+//        int userId = 1;
 
         //Anh xa
         subjectBack = findViewById(R.id.subjectBack);

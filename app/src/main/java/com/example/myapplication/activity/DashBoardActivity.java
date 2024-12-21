@@ -31,8 +31,8 @@ public class DashBoardActivity extends AppCompatActivity {
         notificationBtn = findViewById(R.id.notificationBtn);
 
         Intent intent = getIntent();
-        int userId = intent.getIntExtra("userId", -1);
-        Log.d("User:", userId + "");
+        int userId = intent.getIntExtra("userId", -2);
+        Log.d("UserDB:", userId + "");
 
 
         //Xem danh sách môn học
