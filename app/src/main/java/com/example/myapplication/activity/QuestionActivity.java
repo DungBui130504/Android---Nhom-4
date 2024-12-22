@@ -125,6 +125,7 @@ public class QuestionActivity extends AppCompatActivity {
                         questionAdapter.notifyDataSetChanged();
                         questionAnswerTable.deleteQuestionAnswer(questionAnswerID);
                         numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
+                        numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
                     }
                 }
             }
