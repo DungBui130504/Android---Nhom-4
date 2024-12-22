@@ -78,4 +78,9 @@ public class QuestionAnswerObject {
     public void setChecked(boolean checked) {
         isChecked = checked;
     }
+
+    @Override
+    public String toString(){
+        return "Câu hỏi : " + this.questionContent + "\n" + "Câu trả lời : " + this.answerContent + "\n" + "----------------------------------------------------" + "\n";
+    }
 }

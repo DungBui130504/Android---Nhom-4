@@ -163,14 +163,18 @@
             android:src="@drawable/mess"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="@drawable/subject_back_btn"/>
+            android:background="@drawable/subject_back_btn"
+            android:id="@+id/btnMail"
+            />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/email"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:background="@drawable/subject_back_btn"/>
+            android:background="@drawable/subject_back_btn"
+            android:id="@+id/btnSms"
+            />
     </LinearLayout>
 
 </LinearLayout>
