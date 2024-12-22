@@ -49,7 +49,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Intent resultIntent = new Intent();
-        userId = intent.getIntExtra("userId", -2);
+        int userId = mySharedPrefer.getInt("userID" , -1);
         subjectId = intent.getIntExtra("subjectId", -1);
 
 
