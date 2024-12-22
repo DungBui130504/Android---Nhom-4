@@ -34,6 +34,8 @@ public class AddQuestionActivity extends AppCompatActivity {
     int userId;
     int subjectId;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +96,7 @@ public class AddQuestionActivity extends AppCompatActivity {
                         String questionDate = sdf.format(calendar.getTime());
                         String answerDate = "";
 
-                        if (questionTxt.getText().toString().isEmpty()) {
+                        if (questionTxt.getText().toString().trim().isEmpty()) {
                             Toast.makeText(AddQuestionActivity.this, "Bạn phải nhập nội dung câu hỏi!", Toast.LENGTH_SHORT).show();
                             return;
                         }

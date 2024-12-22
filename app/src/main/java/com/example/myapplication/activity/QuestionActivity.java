@@ -86,7 +86,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
 
-        numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
+        numOfAnswer.setText(String.valueOf(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId)));
 
         deleteBtn = findViewById(R.id.trashBtn);
 
@@ -117,6 +117,10 @@ public class QuestionActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (getCheckList.isEmpty()) {
+                    Toast.makeText(QuestionActivity.this, "Bạn phải chọn câu hỏi để xóa!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 for (int i = QuestionActivity.getCheckList.size() - 1; i >= 0; i--) {
                     Integer e = QuestionActivity.getCheckList.get(i);
                     if (e >= 0 && e < questions.size()) {
@@ -125,9 +129,11 @@ public class QuestionActivity extends AppCompatActivity {
                         questionAdapter.notifyDataSetChanged();
                         questionAnswerTable.deleteQuestionAnswer(questionAnswerID);
                         numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
-                        numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
+                        numOfAnswer.setText(String.valueOf(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId)));
                     }
                 }
+                getCheckList.clear();
+                Toast.makeText(QuestionActivity.this, "Xóa thành công!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -135,6 +141,7 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 try {
+                    getCheckList.clear();
                     check = 1;
                     save = i;
                     Intent i2 = new Intent(QuestionActivity.this, AddQuestionActivity.class);
@@ -157,6 +164,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK) {
             try {
+                getCheckList.clear();
                 // Lấy dữ liệu từ Intent trả về
                 String questionTxt = data.getStringExtra("questionTxt");
                 String answserTxt = data.getStringExtra("answserTxt");
@@ -174,7 +182,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                 numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
 
-                numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
+                numOfAnswer.setText(String.valueOf(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId)));
 
                 questionAdapter.notifyDataSetChanged();
 
@@ -185,6 +193,7 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         if (requestCode == 101 && resultCode == RESULT_OK) {
+            getCheckList.clear();
             try {
                 // Lấy dữ liệu từ Intent trả về
                 String questionTxt = data.getStringExtra("questionTxt");
@@ -207,7 +216,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                 numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
 
-                numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
+                numOfAnswer.setText(String.valueOf(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId)));
 
                 questionAdapter.notifyDataSetChanged();
 
