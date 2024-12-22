@@ -39,6 +39,7 @@ public class SubjectTable {
 
         // Kiểm tra xem userID có hợp lệ không (userID phải tồn tại trong bảng User)
         if (!isUserIDValid(userID)) {
+            Toast.makeText(this.context, "userID: " + userID, Toast.LENGTH_SHORT).show();
             Toast.makeText(this.context, "userID không hợp lệ!", Toast.LENGTH_SHORT).show();
             return false;
         }
