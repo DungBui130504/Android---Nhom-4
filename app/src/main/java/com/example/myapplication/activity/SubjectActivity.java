@@ -2,6 +2,7 @@ package com.example.myapplication.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,7 +63,9 @@ public class SubjectActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        int userId = intent.getIntExtra("userId", -2);
+        SharedPreferences mySharedPrefer = getSharedPreferences("mySharedPrefer", MODE_PRIVATE);
+
+        int userId = mySharedPrefer.getInt("userID" , -1);
         Log.d("Id of me:", userId + "");
 //        int userId = 1;
 

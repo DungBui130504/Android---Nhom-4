@@ -1,5 +1,5 @@
 package com.example.myapplication.activity;
-
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import android.content.SharedPreferences;
 
 public class AddQuestionActivity extends AppCompatActivity {
     ImageButton backBtn;
@@ -46,10 +47,11 @@ public class AddQuestionActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        SharedPreferences mySharedPrefer = getSharedPreferences("mySharedPrefer", MODE_PRIVATE);
 
         Intent intent = getIntent();
         Intent resultIntent = new Intent();
-        userId = intent.getIntExtra("userId", -2);
+//        int userId = mySharedPrefer.getInt("userID" , -1);
         subjectId = intent.getIntExtra("subjectId", -1);
 
 

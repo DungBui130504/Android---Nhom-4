@@ -28,12 +28,13 @@ public class MainActivity extends AppCompatActivity {
 //        editor.clear();
 //        editor.apply();
         int userID = LoginActivity.userID;
-//        Toast.makeText(MainActivity.this,String.valueOf(userID),Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,String.valueOf(userID),Toast.LENGTH_SHORT).show();
 
         if(userID <= 0){
             userID = mySharedPrefer.getInt("userID" , -1);
+            LoginActivity.userID = userID;
         }
-//        Toast.makeText(MainActivity.this,String.valueOf(userID),Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,String.valueOf(userID),Toast.LENGTH_SHORT).show();
 
         if(userID <= 0){
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);

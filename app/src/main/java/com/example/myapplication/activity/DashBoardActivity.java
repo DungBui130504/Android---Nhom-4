@@ -30,10 +30,10 @@ public class DashBoardActivity extends AppCompatActivity {
         subjectBtn = findViewById(R.id.subjectBtn);
         loginBackBtn = findViewById(R.id.loginBackBtn);
         notificationBtn = findViewById(R.id.notificationBtn);
+    SharedPreferences mySharedPrefer = getSharedPreferences("mySharedPrefer", MODE_PRIVATE);
 
         Intent intent = getIntent();
-        int userId = intent.getIntExtra("userId", -2);
-        Log.d("UserDB:", userId + "");
+        int userId = mySharedPrefer.getInt("userID" , -1);
 
 
         //Xem danh sách môn học
