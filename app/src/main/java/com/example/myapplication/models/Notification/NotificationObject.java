@@ -4,6 +4,7 @@ public class NotificationObject {
     public int notificationID;
     public String notificationDateTime;
     public String description;
+    private boolean isChecked;
 
     public int userID;
 
@@ -12,6 +13,7 @@ public class NotificationObject {
         this.userID = -1;
         this.description = "none";
         this.notificationDateTime = "none";
+        this.isChecked = false;
     }
 
     public NotificationObject(int notificationID, String notificationDateTime, String description, int userID) {
@@ -31,5 +33,15 @@ public class NotificationObject {
     }
     public String getDescription() {
         return description;
+    }
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+    public String getNotiDT() {
+        return notificationDateTime;
     }
 }

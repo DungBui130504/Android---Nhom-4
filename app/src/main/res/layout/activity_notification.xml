@@ -189,17 +189,6 @@
         android:layout_marginTop="-50dp">
 
         <ImageButton
-            android:id="@+id/editBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/subject_button_effect"
-            android:padding="20dp"
-            android:src="@drawable/edit" />
-
-        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

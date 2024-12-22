@@ -112,10 +112,10 @@ public class NotificationTable {
     }
 
     // Xóa thông báo theo notificationID
-    public boolean deleteNotificationById(int notificationID) {
+    public boolean deleteNotificationById(int notificationID, int userID) {
         try {
-            String deleteNotificationStatement = "DELETE FROM Notification WHERE notificationID = ?";
-            this.db.execSQL(deleteNotificationStatement, new String[]{String.valueOf(notificationID)});
+            String deleteNotificationStatement = "DELETE FROM Notification WHERE notificationID = ? AND userId = ?";
+            this.db.execSQL(deleteNotificationStatement, new Object[]{notificationID, userID}); // Dùng Object[] thay vì String[]
             return true;
         } catch (Exception e) {
             Toast.makeText(this.context, "Có lỗi khi xóa thông báo: " + e, Toast.LENGTH_SHORT).show();
