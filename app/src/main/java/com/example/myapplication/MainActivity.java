@@ -10,6 +10,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.example.myapplication.activity.DashBoardActivity;
 import com.example.myapplication.activity.LoginActivity;
 
 
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(loginIntent);
         }else {
-
+            Intent DBi = new Intent(MainActivity.this, DashBoardActivity.class);
+            startActivity(DBi);
         }
 
 
