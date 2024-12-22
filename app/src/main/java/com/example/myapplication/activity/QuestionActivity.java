@@ -33,6 +33,7 @@ public class QuestionActivity extends AppCompatActivity {
     ArrayList<QuestionAnswerObject> questions;
     QuestionAdapter questionAdapter;
     QuestionAnswerTable questionAnswerTable;
+    ImageButton deleteBtn ;
     public static ArrayList<Integer> getCheckList = new ArrayList<>();
     int save, check;
 
@@ -87,6 +88,8 @@ public class QuestionActivity extends AppCompatActivity {
 
         numOfAnswer.setText(questionAnswerTable.getCountOfQuestionsIsAnswer(subjectId, userId));
 
+        deleteBtn = findViewById(R.id.trashBtn);
+
         questionBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,6 +111,22 @@ public class QuestionActivity extends AppCompatActivity {
                 i.putExtra("subjectId", subjectId);
                 i.putExtra("Check:" , check);
                 startActivityForResult(i, 100); // Sử dụng requestCode 100
+            }
+        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = QuestionActivity.getCheckList.size() - 1; i >= 0; i--) {
+                    Integer e = QuestionActivity.getCheckList.get(i);
+                    if (e >= 0 && e < questions.size()) {
+                        Integer questionAnswerID = questions.get(e).questionAnswerID;
+                        questions.remove(questions.get(e));
+                        questionAdapter.notifyDataSetChanged();
+                        questionAnswerTable.deleteQuestionAnswer(questionAnswerID);
+                        numOfQuestion.setText(questionAnswerTable.getCountOfQuestions(subjectId, userId));
+                    }
+                }
             }
         });
 
