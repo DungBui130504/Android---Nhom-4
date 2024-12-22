@@ -23,6 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textColor="#8E8E8E"
             android:textSize="15dp" />
 
