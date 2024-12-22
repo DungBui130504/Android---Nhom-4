@@ -117,6 +117,7 @@ public class QuestionActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String phoneNumber = phoneField.getText().toString().trim();
                         String message = messageField.getText().toString().trim();
+                        Toast.makeText(QuestionActivity.this,message,Toast.LENGTH_SHORT).show();
 
                         // Gọi callback để trả về số điện thoại và nội dung SMS
                         callback.onSmsEntered(phoneNumber, message);
@@ -191,26 +192,26 @@ public class QuestionActivity extends AppCompatActivity {
                 // Hiển thị dialog để người dùng nhập số điện thoại và nội dung SMS
                 showSmsInputDialog(new SmsInputDialogCallback() {
                     @Override
-                    public void onSmsEntered(String phoneNumber, String message) {
+                    public void onSmsEntered(String message, String phoneNumber) {
                         // Kiểm tra tính hợp lệ của số điện thoại
-//                        if (!isValidPhoneNumber(phoneNumber)) {
-//                            Toast.makeText(QuestionActivity.this, "Số điện thoại không hợp lệ!", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if (!isValidPhoneNumber(phoneNumber)) {
+                            Toast.makeText(QuestionActivity.this, "Số điện thoại không hợp lệ!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         Toast.makeText(QuestionActivity.this,phoneNumber,Toast.LENGTH_SHORT).show();
 
-                        // Tạo Intent để gửi SMS
-//                        Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
-//                        smsIntent.setData(Uri.parse("smsto:" + phoneNumber));  // Đặt số điện thoại
-//                        smsIntent.putExtra("sms_body", "message");  // Đặt nội dung SMS
-//
-//                        try {
-//                            startActivity(smsIntent);  // Mở ứng dụng SMS để người dùng gửi tin nhắn
-//                        } catch (android.content.ActivityNotFoundException ex) {
-//                            // Xử lý khi không có ứng dụng SMS nào được cài đặt
-//                            Toast.makeText(QuestionActivity.this, "Không có ứng dụng SMS nào được cài đặt.", Toast.LENGTH_SHORT).show();
-//                        }
+//                         Tạo Intent để gửi SMS
+                        Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
+                        smsIntent.setData(Uri.parse("smsto:" + phoneNumber));  // Đặt số điện thoại
+                        smsIntent.putExtra("sms_body", "message");  // Đặt nội dung SMS
+
+                        try {
+                            startActivity(smsIntent);  // Mở ứng dụng SMS để người dùng gửi tin nhắn
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            // Xử lý khi không có ứng dụng SMS nào được cài đặt
+                            Toast.makeText(QuestionActivity.this, "Không có ứng dụng SMS nào được cài đặt.", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }
