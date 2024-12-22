@@ -191,6 +191,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Hiển thị dialog để người dùng nhập số điện thoại và nội dung SMS
                 showSmsInputDialog(new SmsInputDialogCallback() {
+                    String smsContent = "";
                     @Override
                     public void onSmsEntered(String message, String phoneNumber) {
                         // Kiểm tra tính hợp lệ của số điện thoại
@@ -199,12 +200,21 @@ public class QuestionActivity extends AppCompatActivity {
                             return;
                         }
 
-                        Toast.makeText(QuestionActivity.this,phoneNumber,Toast.LENGTH_SHORT).show();
-
+                        if (getCheckList.isEmpty()) {
+                            Toast.makeText(QuestionActivity.this, "Bạn phải chọn câu hỏi để gửi SMS!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        for (int i = QuestionActivity.getCheckList.size() - 1; i >= 0; i--) {
+                            Integer e = QuestionActivity.getCheckList.get(i);
+                            if (e >= 0 && e < questions.size()) {
+                                QuestionAnswerObject q = questions.get(e);
+                                smsContent += q.toString();
+                            }
+                        }
 //                         Tạo Intent để gửi SMS
                         Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
                         smsIntent.setData(Uri.parse("smsto:" + phoneNumber));  // Đặt số điện thoại
-                        smsIntent.putExtra("sms_body", "message");  // Đặt nội dung SMS
+                        smsIntent.putExtra("sms_body", smsContent);  // Đặt nội dung SMS
 
                         try {
                             startActivity(smsIntent);  // Mở ứng dụng SMS để người dùng gửi tin nhắn
