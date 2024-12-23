@@ -1,14 +1,7 @@
 package com.example.myapplication.activity;
 
-import android.annotation.SuppressLint;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,28 +10,22 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.app.AlarmManager;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myapplication.R;
 import com.example.myapplication.adpaters.NotificationAdapter;
-import com.example.myapplication.adpaters.SubjectAdapter;
 import com.example.myapplication.models.Notification.NotificationObject;
-import com.example.myapplication.models.Notification.NotificationReceiver;
 import com.example.myapplication.models.Notification.NotificationTable;
-import com.example.myapplication.models.Subject.SubjectObject;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Locale;
 
 public class NotificationActivity extends AppCompatActivity {

@@ -2,11 +2,9 @@ package com.example.myapplication.activity;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,13 +14,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myapplication.R;
-import com.example.myapplication.models.QuestionAnswer.QuestionAnswerTable;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
-import android.content.SharedPreferences;
 
 public class AddQuestionActivity extends AppCompatActivity {
     ImageButton backBtn;
@@ -109,8 +103,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
                         resultIntent.putExtra("questionTxt", questionTxt.getText().toString());
                         resultIntent.putExtra("answserTxt", answserTxt.getText().toString());
-                        resultIntent.putExtra("questionDate", questionDate);
-                        resultIntent.putExtra("answerDate", answerDate);
+                        resultIntent.putExtra("questionDate", questionDate);resultIntent.putExtra("answerDate", answerDate);
 
                         setResult(RESULT_OK, resultIntent);
 

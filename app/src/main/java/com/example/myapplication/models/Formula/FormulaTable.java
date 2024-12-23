@@ -12,6 +12,7 @@ import com.example.myapplication.Constants.FormulaConstants;
 import com.example.myapplication.Constants.SubjectConstants;
 import com.example.myapplication.Constants.UserConstants;
 import com.example.myapplication.database.Database;
+import com.example.myapplication.models.QuestionAnswer.QuestionAnswerObject;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -122,6 +123,36 @@ public class FormulaTable {
             }
         }
         return listFormula;
+    }
+
+    public ArrayList<FormulaObject> getFormulaBySubjectIdAndUserId(int subjectID, int userId) {
+        ArrayList<FormulaObject> formulas = new ArrayList<>();
+        String query = "SELECT formulaID FROM Formula WHERE subjectID = ? AND userId = ?";
+        Cursor cursor = null;
+
+        try {
+            // Thực thi truy vấn với cả subjectID và userId
+            cursor = this.db.rawQuery(query, new String[]{String.valueOf(subjectID), String.valueOf(userId)});
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    int formulaIDIndex = cursor.getColumnIndex("questionAnswerID");
+                    if (formulaIDIndex >= 0) {
+                        int formulaID = cursor.getInt(formulaIDIndex);
+                        // Thêm kết quả vào danh sách
+                        formulas.add(this.getFormulaById(formulaID));
+                    }
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Toast.makeText(this.context, "Có lỗi khi lấy công thức: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        } finally {
+            // Đóng con trỏ nếu không null
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+
+        return formulas;
     }
 
 

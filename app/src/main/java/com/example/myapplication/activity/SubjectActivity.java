@@ -203,7 +203,7 @@ public class SubjectActivity extends AppCompatActivity {
                                     startActivity(iQuestion);
                                     return true;
                                 } else if (itemId == R.id.option_2) {
-                                    Intent iQuestion2 = new Intent(SubjectActivity.this, MyFormulaActivity.class);
+                                    Intent iQuestion2 = new Intent(SubjectActivity.this, FormulaActivity.class);
                                     startActivity(iQuestion2);
                                     return true;
                                 } else {

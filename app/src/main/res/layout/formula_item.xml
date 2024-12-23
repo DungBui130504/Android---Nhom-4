@@ -8,6 +8,7 @@
     >
 
     <TextView
+        android:id="@+id/formulaItem"
         android:layout_width="192dp"
         android:layout_height="59dp"
         android:layout_gravity="center"
@@ -17,19 +18,21 @@
         android:textStyle="bold" />
 
     <ImageButton
+        android:id="@+id/formulaEdtBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="50dp"
         android:background="@null"
         android:src="@drawable/edit" />
-    
+
     <ImageButton
+        android:id="@+id/formulaDelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
-        android:src="@drawable/trash"
-        android:background="@null"/>
+        android:background="@null"
+        android:src="@drawable/trash" />
 
 </LinearLayout>
